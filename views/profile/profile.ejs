@@ -1,0 +1,26 @@
+<%- layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="stylesheet/style.css">
+
+<div class="profile-header">
+  <h2><%= user.username %>'s Profile</h2>
+  <a href="/logout" class="logout-btn">Logout</a>
+</div>
+
+<p class="profile-info">Name: <%= user.cname %></p>
+<p class="profile-info">Email: <%= user.email %></p>
+
+<h3 class="section-title">Your Rooms</h3>
+<div class="room-grid">
+  <% rooms.forEach(room => { %>
+    <div class="room-card">
+      <% if (room.images.length) { %>
+        <img src="<%= room.images[0].url %>" class="room-image" alt="Room Image">
+      <% } %>
+      <div class="room-details">
+        <h4><%= room.address %></h4>
+        <p>Rent: ₹<%= room.rent %></p>
+        <a href="/kaksh/<%= room._id %>" class="view-btn">View</a>
+      </div>
+    </div>
+  <% }) %>
+</div>

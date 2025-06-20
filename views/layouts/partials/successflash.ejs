@@ -1,0 +1,22 @@
+<% if (success && success.length > 0) { %>
+  <div class="custom-success-alert">
+    <%= success %>
+  </div>
+
+  <style>
+    .custom-success-alert {
+      background: rgba(40, 167, 69, 0.2); /* Light green background with transparency */
+      color: #155724;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin: 15px 0;
+      backdrop-filter: blur(10px); /* Blur effect */
+      border: 1px solid rgba(40, 167, 69, 0.3);
+      font-weight: 500;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+<% } %>
+

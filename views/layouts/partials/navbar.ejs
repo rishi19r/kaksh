@@ -1,0 +1,29 @@
+<nav class="custom-navbar">
+    <link rel="stylesheet" href="stylesheet/style.css">
+  <div class="nav-container">
+    <a class="brand" href="/kaksh">kaksh</a>
+    <div class="nav-links">
+      <a href="/kaksh">Home</a>
+      <a href="/kaksh/new">Enter New Room</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="auth-links">
+      <% if(!currentUser){ %>
+        <a href="/login">Login</a>
+        <a href="/register">SignUp</a>
+      <% } else { %>
+        <a href="/profile" class="profile-link">
+          <img src="/icon/profile.png" alt="Profile">
+        </a>
+      <% } %>
+
+      
+    </div>
+  </div>
+</nav>
+<div class="container" >
+
+<link rel="stylesheet" href="/stylesheet/style.css">
+<link rel="stylesheet" href="/stylesheet/style2.css">
+

@@ -1,0 +1,46 @@
+<%- layout('layouts/boilerplate') %>
+
+<div class="form-wrapper">
+  <form action="/kaksh" method="post" enctype="multipart/form-data" class="custom-form">
+    <h2 class="details">Submit Room Details</h2>
+
+    <input type="text" name="kaksh[address]" placeholder="Address" required>
+    <input type="number" name="kaksh[contact]" placeholder="Contact" required>
+    <input type="text" name="kaksh[owner]" placeholder="Owner" required>
+    <input type="number" name="kaksh[rent]" placeholder="Rent" required>
+    <input type="text" name="kaksh[area]" placeholder="Area" required>
+    
+    <label class="file-label"></label>
+    <input type="file" name="kaksh[images]" multiple>
+
+    <select name="kaksh[peopleCanStay]" required>
+      <option disabled selected>Choose how many can stay</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5+">5+</option>
+    </select>
+
+    <select name="kaksh[roomSize]" required>
+      <option disabled selected>Choose room size</option>
+      <option value="Single Room">Single Room</option>
+      <option value="One Room One Kitchen">One Room One Kitchen</option>
+      <option value="Two Rooms">Two Rooms</option>
+      <option value="1BHK">1BHK</option>
+      <option value="2BHK">2BHK</option>
+      <option value="Larger">Larger</option>
+    </select>
+
+    <textarea name="kaksh[rules]" placeholder="Rules..."></textarea>
+
+    <button type="submit" class="submit-btn">Submit</button>
+    <a href="/kaksh" class="back-btn">Go Back</a>
+  </form>
+</div>
+
+
+<link rel="stylesheet" href="/stylesheet/style2.css">
+<link rel="stylesheet" href="/stylesheet/style.css">
+
+

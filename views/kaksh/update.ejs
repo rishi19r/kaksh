@@ -1,0 +1,32 @@
+<%- layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="stylesheet/style3.css">
+
+<div class="form-wrapper">
+  <form action="/kaksh/<%=kakshs._id%>?_method=put" method="post" enctype="multipart/form-data" class="form-card">
+    <h2>Edit Kaksh</h2>
+
+    <input type="text" name="kaksh[address]" placeholder="Address" value="<%= kakshs.address %>" required>
+    <input type="number" name="kaksh[contact]" placeholder="Contact" value="<%= kakshs.contact %>" required>
+    <input type="text" name="kaksh[owner]" placeholder="Owner" value="<%= kakshs.owner %>" required>
+    <input type="number" name="kaksh[rent]" placeholder="Rent" value="<%= kakshs.rent %>" required>
+    <input type="text" name="kaksh[area]" placeholder="Area" value="<%= kakshs.area %>" required>
+    <input type="file" name="kaksh[images]" multiple>
+    <input type="number" name="kaksh[peopleCanStay]" placeholder="How many can stay" value="<%= kakshs.peopleCanStay %>" required>
+    <input type="text" name="kaksh[roomSize]" placeholder="Room Size" value="<%= kakshs.roomSize %>" required>
+    
+    <textarea name="kaksh[rules]" placeholder="Rules" required><%= kakshs.rules %></textarea>
+
+    <div class="image-gallery">
+      <% kakshs.images.forEach((img, i) => { %>
+        <div class="image-box">
+          <img src="<%= img.url %>" alt="Image <%= i %>">
+          <label>
+            <input type="checkbox" name="deleteImage[]" value="<%= img.filename %>"> Delete?
+          </label>
+        </div>
+      <% }) %>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

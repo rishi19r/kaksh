@@ -1,0 +1,99 @@
+<%- layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="stylesheet/style3.css">
+ 
+<div class="slider">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="roomphoto/photo1.jpg" class="d-block w-100 h" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="roomphoto/photo4.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="roomphoto/photo3.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+
+<h2 class="page-heading">Find Your Ideal Room</h2>
+
+<form method="GET" action="/kaksh" class="filter-form">
+  <div class="form-group">
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" placeholder="Search by location" value="<%= query.location || '' %>">
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price Range</label>
+    <select id="price" name="price">
+      <option value="">Any</option>
+      <option value="lt5000" <%= query?.price === 'lt5000' ? 'selected' : '' %>>Below ₹5000</option>
+      <option value="5000-10000" <%= query?.price === '5000-10000' ? 'selected' : '' %>>₹5000 - ₹10000</option>
+      <option value="gt10000" <%= query?.price === 'gt10000' ? 'selected' : '' %>>Above ₹10000</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="roomSize">Room Size</label>
+    <select id="roomSize" name="roomSize">
+      <option value="">Any</option>
+      <option value="Single Room" <%= query?.roomSize === 'Single Room' ? 'selected' : '' %>>Single Room</option>
+      <option value="One Room One Kitchen" <%= query?.roomSize === 'One Room One Kitchen' ? 'selected' : '' %>>1 Room + Kitchen</option>
+      <option value="Two Rooms" <%= query?.roomSize === 'Two Rooms' ? 'selected' : '' %>>Two Rooms</option>
+      <option value="1BHK" <%= query?.roomSize === '1BHK' ? 'selected' : '' %>>1BHK</option>
+      <option value="2BHK" <%= query?.roomSize === '2BHK' ? 'selected' : '' %>>2BHK</option>
+      <option value="Larger" <%= query?.roomSize === 'Larger' ? 'selected' : '' %>>Larger</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="peopleCanStay">People Allowed</label>
+    <select id="peopleCanStay" name="peopleCanStay">
+      <option value="">Any</option>
+      <option value="1" <%= query?.peopleCanStay === '1' ? 'selected' : '' %>>1</option>
+      <option value="2" <%= query?.peopleCanStay === '2' ? 'selected' : '' %>>2</option>
+      <option value="3" <%= query?.peopleCanStay === '3' ? 'selected' : '' %>>3</option>
+      <option value="4" <%= query?.peopleCanStay === '4' ? 'selected' : '' %>>4</option>
+      <option value="5+" <%= query?.peopleCanStay === '5+' ? 'selected' : '' %>>5+</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <button type="submit">Search</button>
+  </div>
+</form>
+
+
+
+<% if (!rooms || rooms.length === 0) { %>
+  <div class="no-results">No rooms found for your search.</div>
+<% } %>
+<div class="room-listings">
+  <% for (let room of rooms) { %>
+    <div class="room-card">
+      <img src="<%= room.images[0]?.url %>" alt="Room Image">
+      <div class="content">
+        <h5><i class="bi bi-house-door-fill"></i> <%= room.address %></h5>
+        <p><strong>Area:</strong> <%= room.area %></p>
+        <p><strong>Size:</strong> <%= room.roomSize %></p>
+        <p><strong>For:</strong> <%= room.peopleCanStay %> person(s)</p>
+        <p><strong>Rent:</strong> ₹<%= room.rent %></p>
+        <a href="/kaksh/<%= room._id %>" class="btn">View Details</a>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+<a href="/kaksh/new" class="sticky-add-btn">➕ Add New Room</a>

@@ -1,0 +1,811 @@
+.slider {
+    width: 117.75%;
+    height: 10%; /* Increased height */
+    margin-left: -9%;
+    margin-top: -3.7%;
+    padding: 0;
+}
+.carousel-inner img {
+  height: 400px; /* or any desired height */
+  object-fit: cover; /* ensures image covers the area nicely */
+}
+.details{
+  color:rgb(255, 255, 255);
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar styling */
+.custom-navbar {
+ background-color: #201d1d;
+  background-size: cover; 
+  padding: 16px 32px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', sans-serif;
+    backdrop-filter: blur(10px);
+  background-color: rgba(6, 3, 3, 0.5);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.brand:hover {
+  transform: scale(1.1);
+  color: #ffdd57;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffdd57;
+}
+
+.auth-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Button style for login and signup */
+.auth-links a {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.auth-links a[href="/login"] {
+  background-color: black;
+  color: #ffdd57;
+  border: 2px solid #000000;
+ 
+}
+
+
+.auth-links a[href="/register"] {
+  background-color: black;
+  color: #ffdd57;
+  border: 2px solid #000000;
+}
+
+.auth-links a:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+   background-color:#ffdd57;
+    color: black;
+    border: black;
+}
+
+/* Profile Image */
+.profile-link img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s;
+}
+
+.profile-link img:hover {
+  transform: scale(1.1);
+}
+
+/* Container wrapper */
+.container {
+  padding: 40px 32px;
+}
+
+/* Carousel styling */
+.carousel-inner img {
+  height: 450px;
+  object-fit: cover;
+  /* border-radius: 12px; */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add spacing for carousel controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.custom-footer {
+  background-color: #111; /* dark background */
+  color: #ccc; /* muted text */
+  padding: 20px 0;
+  margin-top: auto;
+   margin-bottom: -4%;
+  margin-left: -9%;
+  width: 117.76%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-text {
+  font-size: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #ffdd57; /* highlight on hover */
+}
+
+
+/* General Styling */
+body {
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  font-family: 'Poppins', sans-serif;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px 30px;
+  background: linear-gradient(135deg, rgba(33, 30, 30, 0.6));
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.profile-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.logout-btn {
+  background: linear-gradient(45deg, #ff4e50, #f9d423);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logout-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 78, 80, 0.4);
+}
+
+/* Profile Info */
+.profile-info {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color:  #ffffff;;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  border-left: 5px solid #2a5298;
+  padding-left: 12px;
+  
+}
+
+/* Room Grid */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding-bottom: 40px;
+}
+
+/* Room Card */
+
+
+.room-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+.room-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.room-card:hover .room-image {
+  transform: scale(1.05);
+}
+
+.room-details {
+  padding: 16px 20px;
+  background-color: #f8f9fa;
+  
+}
+
+.room-details h4 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.room-details p {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+.view-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
+}
+
+
+.room-card {
+  background: rgba(255, 255, 255, 0.9); /* Light blur background */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Make sure text inside remains black and readable */
+.room-details {
+  padding: 16px 20px;
+  background:rgba(43, 41, 41, 0.395);/* slightly blurred light background */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #000;
+}
+
+
+
+
+
+/* Center the form on the page */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 20px;
+}
+
+/* Register form with background image and blur inputs */
+.custom-register-form {
+  /* background: url('/roomphoto/photo5.jpg') center/cover no-repeat; */
+  padding: 40px 32px;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 500px;
+
+   box-shadow: 10px 15px 16px 16px rgb(27, 25, 25, 0.9);
+  /* Removed white fallback */
+  background-color: transparent;
+    backdrop-filter: blur(10px);
+  background-color: rgba(33, 30, 30, 0.3);
+}
+
+/* Form heading */
+.custom-register-form h2 {
+  text-align: center;
+  color: #28444c;
+  font-size: xx-large;
+  margin-bottom: 24px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Labels */
+.custom-register-form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Input fields with blur/glass effect */
+.custom-register-form input[type="text"],
+.custom-register-form input[type="email"],
+.custom-register-form input[type="number"],
+.custom-register-form input[type="password"] {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  backdrop-filter: blur(6px);
+  margin-bottom: 16px;
+}
+
+/* Placeholder text */
+.custom-register-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Submit button */
+.custom-register-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #00b09b, #96c93d);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.custom-register-form button:hover {
+  background: linear-gradient(to right, #96c93d, #00b09b);
+}
+
+
+
+/* Container for all room cards */
+.room-listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+  
+}
+
+/* Compact Room Card */
+.room-card {
+  border: #222;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+   backdrop-filter: blur(14px);
+  background:rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+/*  
+   backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 1); */
+
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 18px 22px rgba(0, 0, 0);
+
+}
+
+/* Room image */
+.room-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Card content */
+.room-card .content {
+  padding: 16px;
+}
+
+.room-card .content h5 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.room-card .content p {
+  font-size: 0.95rem;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.room-card .content .btn {
+  margin-top: 10px;
+  display: inline-block;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.3s;
+  font-weight: 500;
+}
+
+.room-card .content .btn:hover {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+/* Sticky Add Button */
+.sticky-add-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  background: #0072ff;
+  color: #fff;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-weight: bold;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.sticky-add-btn:hover {
+  background: #005dd1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .room-card img {
+    height: 150px;
+  }
+}
+
+
+/* Page Heading */
+.page-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin: 40px 0 20px;
+  color: #222;
+}
+
+/* Filter Form */
+.filter-form {
+
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 24px;
+
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  background:rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  /* margin: 40px auto; */
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* max-width: 12000px; */
+  
+}
+
+/* Individual Form Group */
+.form-group {
+  flex: 1 1 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  
+  width: 100%;
+}
+
+/* Label Styling */
+.form-group label {
+  font-weight: 600;
+  color: #222;
+  font-size: 0.95rem;
+}
+
+/* Input & Select Styling */
+.form-group input,
+.form-group select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.96rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease-in-out;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #00b4d8;
+  outline: none;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.2);
+}
+
+/* Submit Button */
+.form-group button {
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
+  margin-top: auto;
+}
+
+.form-group button:hover {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  box-shadow: 0 6px 20px rgba(0, 114, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+
+
+
+
+
+/* Page container & layout */
+.page-container {
+  max-width: 1140px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+}
+
+.flex-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex: 1 1 48%;
+  min-width: 320px;
+}
+
+/* Cards show  */
+.custom-card {
+  background: rgba(255, 255, 255, 0.2); /* semi-transparent */
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px); /* blur effect */
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* optional border for glass effect */
+}
+
+
+.custom-card-body {
+  padding: 1.5rem 2rem;
+  flex-grow: 1;
+  
+}
+
+.card-header-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Typography */
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  color: #999;
+  color: #000000;
+}
+
+/* Buttons */
+button, a.btn-primary, a.btn-secondary, a.btn-success {
+  cursor: pointer;
+  padding: 0.55rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #7f8c8d;
+}
+
+.btn-success {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #1e8449;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-sm {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  border-radius: 8px;
+}
+
+/* Textarea */
+.textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Carousel image */
+.carousel-img {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+/* Reviews list */
+.reviews-list {
+  margin-top: 1rem;
+}
+
+.review-card {
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(44, 62, 80, 0.1);
+  background: white;
+  padding: 1rem 1.5rem;
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* Alerts */
+.alert-info {
+  background-color: #d9edf7;
+  color: #31708f;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}

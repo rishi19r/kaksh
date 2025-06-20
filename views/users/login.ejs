@@ -1,0 +1,18 @@
+<%- layout('layouts/boilerplate') %>
+
+<link rel="stylesheet" href="stylesheet/style2.css">
+ 
+
+<div class="form-wrapper">
+  <form action="/login" method="post" class="custom-login-form">
+    <h2>Login to Kaksh</h2>
+
+    <label for="username"></label>
+    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+    <label for="password"></label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+    <button type="submit">Login</button>
+  </form>
+</div>
