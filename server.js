@@ -128,7 +128,7 @@ server.use((req, res, next) => {
 });
 
 
-server.use('/kaksh', kakshRoute);
+server.use('/', kakshRoute);
 server.use('/kaksh/:id/review', reviewRoute);
 server.use('/', registerRouter);
 server.use('/', profileRouter);
