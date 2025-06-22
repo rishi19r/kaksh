@@ -465,7 +465,7 @@ body {
   border-radius: 25px;
   width: 100%;
   max-width: 500px;
-
+margin-left: 45px;
    box-shadow: 10px 15px 16px 16px rgb(27, 25, 25, 0.9);
   /* Removed white fallback */
   background-color: transparent;

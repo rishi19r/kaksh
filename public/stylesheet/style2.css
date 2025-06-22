@@ -178,6 +178,7 @@ background: rgba(255, 255, 255, 0.9);
   background-color: transparent;
     backdrop-filter: blur(10px);
   background-color: rgba(36, 34, 34, 0.3);
+  margin-left: 45px;
 }
 
 /* Form heading */
