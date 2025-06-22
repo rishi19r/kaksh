@@ -7,8 +7,23 @@
 }
 /* Container wrapper */
 .container {
-  padding:  32px;
+  padding:   32px;
 }
+
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+}
+
 
 /* Slider Container */
 .slider {
@@ -20,6 +35,7 @@
   background-size: cover;
   height: auto;
   overflow: hidden;
+
 }
 
 /* Image inside carousel */
@@ -39,7 +55,7 @@
     height: 350px;
     width: 100%;
   
-    padding-top: 0%;
+   
   }
 }
 
@@ -48,8 +64,7 @@
   .carousel-inner img {
     height: 250px;
     width: 100%;
- 
-    padding-top: 0%;
+  
   }
 }
 
@@ -59,7 +74,6 @@
     height: 250px;
     width: 100%;
    
-    padding-top: 0%;
   }
 }
 
@@ -135,7 +149,7 @@
 }
 
 .auth-links a:hover {
-  background-color: #ffdd57;
+  
   color: black;
   transform: scale(1.05);
 }
@@ -345,6 +359,12 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
   padding-bottom: 40px;
+  place-items: center;
+}
+
+.room-card {
+  width: 100%;
+  max-width: 360px;
 }
 
 /* Room Card */
