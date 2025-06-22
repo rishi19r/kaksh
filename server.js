@@ -18,6 +18,9 @@ const User = require('./model/user');
 const ExpressError = require('./error/ExpressError');
 
 
+
+
+
 const reviewRoute = require('./routes/review');
 const kakshRoute = require('./routes/kaksh');
 const registerRouter = require('./routes/register');
@@ -51,6 +54,37 @@ server.set('view engine', 'ejs');
 server.engine('ejs', ejsMate);
 server.set('query parser', 'extended');
 server.use(sanitizeV5({ replaceWith: '_' }));
+const helmet = require("helmet");
+
+server.use(
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        "default-src": ["'self'"],
+        "script-src": [
+          "'self'",
+          "https://cdn.jsdelivr.net", // Allow Bootstrap JS
+          "'unsafe-inline'" // Optional: only if you're using inline scripts
+        ],
+        "style-src": [
+          "'self'",
+          "https://cdn.jsdelivr.net", // Allow Bootstrap CSS
+          "'unsafe-inline'" // Allow inline styles (needed for Bootstrap sometimes)
+        ],
+        "img-src": [
+          "'self'",
+          "data:",
+          "https://res.cloudinary.com" // Allow Cloudinary images
+        ],
+        "font-src": ["'self'", "https://cdn.jsdelivr.net"],
+        "connect-src": ["'self'"],
+        "object-src": ["'none'"],
+        "frame-src": ["'none'"]
+      }
+    }
+  })
+);
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,
@@ -112,7 +146,9 @@ server.use((err, req, res, next) => {
   res.status(statusCode).render('error', { err });
 });
 
+const PORT = process.env.PORT || 3000;
 
-server.listen(3000, () => {
+
+server.listen(PORT, () => {
   console.log('🚀 Server running on http://localhost:3000');
 });
