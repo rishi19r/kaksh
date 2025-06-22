@@ -129,7 +129,7 @@ server.use((req, res, next) => {
 
 
 server.get('/', (req, res) => {
-  res.render('home'); // This will load views/home.ejs
+  res.render('kaksh/home'); // This will load views/home.ejs
 });
 
 server.use('/kaksh', kakshRoute);
