@@ -3,17 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-   "start": "node server.js"
+    "start": "node server.js"
   },
   "engines": {
-  "node": ">=18.0.0"
-},
+    "node": ">=18.0.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "cloudinary": "^1.41.3",
+    "connect-flash": "^0.1.1",
     "connect-mongo": "^5.1.0",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
