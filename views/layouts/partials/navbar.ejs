@@ -1,15 +1,25 @@
 <nav class="custom-navbar">
-    <link rel="stylesheet" href="stylesheet/style.css">
+  <link rel="stylesheet" href="stylesheet/style.css">
+
   <div class="nav-container">
-    <a class="brand" href="/kaksh">kaksh</a>
-    <div class="nav-links">
+    <a class="brand" href="/kaksh">Kaksh</a>
+
+    <!-- Hamburger Icon for Mobile -->
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
       <a href="/kaksh">Home</a>
       <a href="/kaksh/new">Enter New Room</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
     </div>
-    <div class="auth-links">
-      <% if(!currentUser){ %>
+
+    <div class="auth-links" id="authLinks">
+      <% if (!currentUser) { %>
         <a href="/login">Login</a>
         <a href="/register">SignUp</a>
       <% } else { %>
@@ -17,13 +27,27 @@
           <img src="/icon/profile.png" alt="Profile">
         </a>
       <% } %>
-
-      
     </div>
   </div>
 </nav>
-<div class="container" >
 
-<link rel="stylesheet" href="/stylesheet/style.css">
-<link rel="stylesheet" href="/stylesheet/style2.css">
+<!-- Main container -->
+<div class="container">
+  <link rel="stylesheet" href="/stylesheet/style.css">
+  <link rel="stylesheet" href="/stylesheet/style2.css">
+</div>
+
+<!-- JS Toggle Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('navLinks');
+    const authLinks = document.getElementById('authLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      authLinks.classList.toggle('active');
+    });
+  });
+</script>
 

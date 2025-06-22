@@ -2,7 +2,7 @@ module.exports.isLoggedin = (req,res,next)=>{
     if(!req.isAuthenticated()){
         req.session.returnTo = req.originalUrl;
         req.flash('error','You have Signed in First')
-       return res.redirect('/login')
+       return res.redirect('/login?error=You have Signed in First')
     }
     next()
 }

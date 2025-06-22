@@ -28,13 +28,52 @@ router.get('/login',(req,res)=>{
   res.render('users/login')
 })
 
-router.post('/login',returnstoreTo,passport.authenticate('local',{failureFlash:true,failureRedirect:'/login'}),
-(req,res)=>{
-  req.flash('success','Welcome back')
-  const redirectUrl  = res.locals.returnTo || '/kaksh'
-  res.redirect(redirectUrl)
-}
-)
+router.post(
+  '/login',
+  returnstoreTo,
+  (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+      if (err) return next(err);
+      if (!user) {
+        // Redirect with alert message in query
+        return res.redirect('/login?error=Invalid username or password');
+      }
+
+      // Login user
+      req.logIn(user, (err) => {
+        if (err) return next(err);
+        const redirectUrl = res.locals.returnTo || '/kaksh';
+        return res.redirect(redirectUrl);
+      });
+    })(req, res, next);
+  }
+);
+router.post(
+  '/login',
+  returnstoreTo,
+  (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+      if (err) return next(err);
+      if (!user) {
+        // Redirect with alert message in query
+        return res.redirect('/login?error=Invalid username or password');
+      }
+
+      // Login user
+      req.logIn(user, (err) => {
+        if (err) return next(err);
+        const redirectUrl = res.locals.returnTo || '/kaksh';
+        return res.redirect(redirectUrl);
+      });
+    })(req, res, next);
+  }
+);
+
+
+
+
+
+
 
 router.get('/logout',(req,res,next)=>{
   req.logOut(function (err){

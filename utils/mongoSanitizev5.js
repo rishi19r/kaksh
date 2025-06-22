@@ -1,6 +1,6 @@
 const mongoSanitize = require('express-mongo-sanitize');
  
-// deep-clone helper
+
 function deepCopy(obj) {
   if (obj === null || typeof obj !== 'object') return obj;
   if (Array.isArray(obj)) return obj.map(deepCopy);
@@ -9,7 +9,6 @@ function deepCopy(obj) {
   );
 }
  
-// middleware
 module.exports = function sanitizeV5(options = {}) {
   const hasOnSanitize = typeof options.onSanitize === 'function';
  

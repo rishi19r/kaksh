@@ -1,7 +1,6 @@
 <%- layout('layouts/boilerplate') %>
 
 <link rel="stylesheet" href="stylesheet/style2.css">
- 
 
 <div class="form-wrapper">
   <form action="/login" method="post" class="custom-login-form">
@@ -16,3 +15,13 @@
     <button type="submit">Login</button>
   </form>
 </div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const error = params.get("error");
+  const success = params.get("success");
+
+  if (error) alert(error);
+  if (success) alert(success);
+
+</script>
