@@ -128,12 +128,17 @@ server.use((req, res, next) => {
 });
 
 
-server.use('/', kakshRoute);
+server.get('/', (req, res) => {
+  res.render('home'); // This will load views/home.ejs
+});
+
+server.use('/kaksh', kakshRoute);
 server.use('/kaksh/:id/review', reviewRoute);
 server.use('/', registerRouter);
 server.use('/', profileRouter);
 server.use('/', aboutRouter);
 server.use('/', contactRouter);
+
 
 
 server.all('*', (req, res, next) => {
