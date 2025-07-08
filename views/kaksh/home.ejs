@@ -10,7 +10,6 @@
     }
 
     .hero {
-     
       background-size: cover;
       background-position: center;
       height: 90vh;
@@ -62,9 +61,13 @@
     <h1>Welcome to Kaksh 🏠</h1>
     <p>Find your perfect rental room with ease. Reliable listings. Secure bookings. Smart living.</p>
     <div class="buttons">
-              <a href="/kaksh">Home</a>
-      <a href="/login">Login</a>
-      <a href="/register">Register</a>
+      <a href="/kaksh">Home</a>
+      <% if (!currentUser) { %>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+      <% } else { %>
+        <a href="/logout">Logout</a>
+      <% } %>
     </div>
   </div>
-
+</body>

@@ -149,7 +149,7 @@
 }
 
 .auth-links a:hover {
-  
+  background-color:#ffdd57 ;
   color: black;
   transform: scale(1.05);
 }
